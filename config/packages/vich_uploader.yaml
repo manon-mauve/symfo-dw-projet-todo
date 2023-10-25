@@ -1,0 +1,8 @@
+vich_uploader:
+    db_driver: orm
+
+    mappings:
+       checklists:
+           uri_prefix: /cheklists/
+           upload_destination: '%kernel.project_dir%/public/uploads/checklists/images'
+           namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
