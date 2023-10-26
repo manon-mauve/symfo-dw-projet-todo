@@ -1,37 +1,31 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Checklist index{% endblock %}
+{% block title %}My Checklists{% endblock %}
 
 {% block body %}
-    <h1>Checklist index</h1>
+    <h1 class="text-center m-4">My Checklists</h1>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>Image</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
+    <section>
+    <div class="d-flex justify-content-evenly flex-wrap">
         {% for checklist in checklists %}
-            <tr>
-                <td>{{ checklist.id }}</td>
-                <td>{{ checklist.name }}</td>
-                <td>{{ checklist.imageName }}</td>
-                <td>
-                    <a href="{{ path('app_checklist_show', {'id': checklist.id}) }}">show</a>
-                    <a href="{{ path('app_checklist_edit', {'id': checklist.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="3">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+        <div class="card mb-2 text-white bg-primary" style="width: 15rem;">
+            <img src="{{ asset('uploads/checklists/images/' ~ checklist.imageName) }}" class="card-img-top" alt="{{ checklist.name }}">
+            <div class="card-body">
+                <h5 class="card-title fw-bold">{{ checklist.name }}</h5>
 
-    <a href="{{ path('app_checklist_new') }}">Create new</a>
+                <a class="btn btn-secondary" href="{{ path('app_checklist_show', {'id': checklist.id}) }}">Show</a>
+                <a class="btn btn-secondary" href="{{ path('app_checklist_edit', {'id': checklist.id}) }}">Edit</a>
+            </div>
+        </div>
+        {% else %}
+            <p>No checklists yet.</p>
+        {% endfor %}
+
+    </div>
+    <div class="text-center mt-5">
+        <a class="btn btn-primary" href="{{ path('app_checklist_new') }}">Create new</a>
+    </div>
+    
+</section>
+
 {% endblock %}

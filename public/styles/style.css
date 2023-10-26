@@ -12,6 +12,16 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap");
+
+main {
+  margin: 0 auto;
+  width: 80%;
+}
+
+#itemlist {
+  width:50%;
+}
+
 :root,
 [data-bs-theme=light] {
   --bs-blue: #008cba;

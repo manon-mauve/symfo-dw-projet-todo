@@ -3,9 +3,13 @@
 {% block title %}New Checklist{% endblock %}
 
 {% block body %}
-    <h1>Create new Checklist</h1>
+    <h1>Create a new Checklist</h1>
 
+    <div class="my-3 p-3 border">
     {{ include('checklist/_form.html.twig') }}
+    </div>
 
-    <a href="{{ path('app_checklist_index') }}">back to list</a>
+    <div class="mt-3">
+    <a class="btn btn-primary" href="{{ path('app_checklist_index') }}"><i class="fa-solid fa-arrow-left"></i> Back to my checklists</a>
+    </div>
 {% endblock %}

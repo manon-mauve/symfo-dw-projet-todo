@@ -5,9 +5,15 @@
 {% block body %}
     <h1>Edit Checklist</h1>
 
+    <div class="my-3 p-3 border">
     {{ include('checklist/_form.html.twig', {'button_label': 'Update'}) }}
+    </div>
 
-    <a href="{{ path('app_checklist_index') }}">back to list</a>
+    <div class="mb-3">
+    <a class="btn btn-primary" href="{{ path('app_checklist_index') }}"><i class="fa-solid fa-arrow-left"></i> Back to my checklists</a>
+    </div>
 
+    <div class="btn btn-secondary">
     {{ include('checklist/_delete_form.html.twig') }}
+    </div>
 {% endblock %}
