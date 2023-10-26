@@ -109,7 +109,7 @@ class ChecklistController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}', name: 'app_checklist_delete', methods: ['POST'])]
+    #[Route('/{id}/delete', name: 'app_checklist_delete', methods: ['POST'])]
     public function delete(Request $request, Checklist $checklist, EntityManagerInterface $entityManager): Response
     {
         if ($this->isCsrfTokenValid('delete'.$checklist->getId(), $request->request->get('_token'))) {
